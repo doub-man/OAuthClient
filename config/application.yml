@@ -1,0 +1,17 @@
+defaults: &defaults
+  email: dev@example.com
+  secret: foo123
+
+development:
+  <<: *defaults
+  todo_app_id: 8bca6f5f1eb1aa21a95f949bcc2a4aa55658e6f1b2fb1c68c55f5e94c05f6e34
+  todo_app_secret: 8fd8d6d2944c7cadb6263829a2ca8b6dede005c44e30d0855b05c2faec87a365 
+
+test:
+  <<: *defaults
+  email: test@example.com
+
+production:
+  <<: *defaults
+  email: info@example.com
+  secret: 321oof

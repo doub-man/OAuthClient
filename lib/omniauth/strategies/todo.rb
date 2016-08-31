@@ -11,16 +11,17 @@ module OmniAuth
       }
 
       uid do
-        raw_info["id"]
+        raw_info["user"]["id"]
       end
 
       info do
-        { email: raw_info["email"] }
+        {
+          email: raw_info["user"]["email"]
+        }
       end
 
       def raw_info
-        binding.pry
-        access_token.get("/api/me").parsed
+        @raw_info ||= access_token.get("/api/me").parsed
       end
 
     end
